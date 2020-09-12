@@ -8,7 +8,7 @@ class MarsWeatherReportGraph extends Component {
 
   render() {
     return (
-      <div >
+      <div>
         Hellow Mars!
       </div>
     );
