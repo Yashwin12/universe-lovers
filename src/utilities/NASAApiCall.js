@@ -4,7 +4,7 @@ import {containsKey} from "./BasicFuncs";
 
 function NASAApiCall ( baseURI = null , otherUriParams = [] ) {
 
-    if( baseURI != null && baseURI != "" && containsKey( "api_key", otherUriParams ) == false ){
+    if( baseURI !== null && baseURI !== "" && containsKey( "api_key", otherUriParams ) === false ){
         console.info( "BaseURI && apiKey is not valid");        
         return;
     }
@@ -12,7 +12,7 @@ function NASAApiCall ( baseURI = null , otherUriParams = [] ) {
     let uriParams = "";    
 
     otherUriParams.forEach( ( element, index ) => {
-        if( index == 0 )
+        if( index === 0 )
             uriParams += "?" + element.key + "=" + element.value;
         
         else 

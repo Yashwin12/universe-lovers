@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
 
