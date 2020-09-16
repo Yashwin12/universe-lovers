@@ -67,7 +67,7 @@ class Mars extends Component {
         // temperatureUnit = "C" // Default in degree celcius. Other option is Farenheit.
       };
 
-      let formattedDate = finalArray.push({
+      finalArray.push({
         wind,
         pressure,
         temperature,
@@ -81,11 +81,10 @@ class Mars extends Component {
 
   render() {
     return (
-      <div>        
-
+      <div className = "divMars">            
         <MarsInsightDashboard mostRecentSol = { this.state.formatedNASAAPIResponse[this.state.formatedNASAAPIResponse.length - 1] } />
         
-        < MarsDailyWeatherReport sols = {this.state.formatedNASAAPIResponse}/>
+        <MarsDailyWeatherReport sols = {this.state.formatedNASAAPIResponse}/>
         {/* <MarsWeatherReportGraph /> */}
       </div>
     );

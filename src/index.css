@@ -5,4 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.divMars{
+  width: 900px;
+  height: 400px;
+  background-color:rgba(192,192,192,0.3);
+  border-radius: 25px;
+  /* text-align: center;   */
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.mars-mainTitle{ 
+  text-align: center; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.label{
+  font-weight: bold;
+}
+
+.verticalDivider {  
+  border-left: 1px solid red;
+  height: 5vw;
+}
+
+.gridContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
+}
+
+.gridItem {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  /* padding: 20px; */
+  /* font-size: 30px; */
+  text-align: center;
+}
+
+.image{
+  height: 50px; 
+  width: 50px;
 }

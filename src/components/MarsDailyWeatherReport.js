@@ -6,8 +6,6 @@ class MarsDailyWeatherReport extends Component {
         this.state = {  };
     }
 
-
-
     render() {
 
         let { sols } = this.props;
@@ -15,7 +13,7 @@ class MarsDailyWeatherReport extends Component {
         {/* TODO_YASH : Make table component over here */}
         return (
             <div>
-                hello
+                {/* hello */}
             </div>
         );
     }
