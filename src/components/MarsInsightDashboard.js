@@ -14,7 +14,6 @@ class MarsInsightDashboard extends Component {
   render() {
     let { mostRecentSol } = this.props;
     
-
     if ( mostRecentSol === null || mostRecentSol === undefined )
         return null;
         
@@ -22,7 +21,7 @@ class MarsInsightDashboard extends Component {
 
     return (
       <div>
-        <h1 className = "mars-mainTitle"> Latest weather at Elysium Plantitia</h1>
+        <div className = "mars-mainTitle"> Latest weather at Elysium Plantitia</div>
         <br/>
         <div className = "gridContainer">
           <div className = "gridItem" style = {{marginTop: "5%"}}>
@@ -98,7 +97,13 @@ class MarsInsightDashboard extends Component {
           </div>
         
         </div>
-                
+        
+        <hr style = {{border: "0.5px solid gray", marginLeft: "5%", marginRight: "5%"}}/>
+
+        <div style = {{marginLeft: "5%", marginRight: "5%"}} >
+          <span className = "label">Note:</span>
+          <span>InSight is taking daily weather measurements (temperature, wind, pressure) on the surface of Mars at Elysium Planitia, a flat, smooth plain near Mars’ equator.</span>
+        </div>     
       </div>
     );
     

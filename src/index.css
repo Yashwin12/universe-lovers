@@ -23,9 +23,10 @@ body {
 }
 
 .mars-mainTitle{ 
+  font-size: 30px;
   text-align: center; 
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2px;  
 }
 
 .label{
