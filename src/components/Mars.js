@@ -81,7 +81,7 @@ class Mars extends Component {
 
   render() {
     return (
-      <div className = "divMars">            
+      <div className = "divMars col-8 container justify-content-center">                     
         <MarsInsightDashboard mostRecentSol = { this.state.formatedNASAAPIResponse[this.state.formatedNASAAPIResponse.length - 1] } />
         
         <MarsDailyWeatherReport sols = {this.state.formatedNASAAPIResponse}/>
