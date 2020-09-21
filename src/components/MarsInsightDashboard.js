@@ -20,13 +20,14 @@ class MarsInsightDashboard extends Component {
 
     // TODO_YASH: Convery all values to an integer
     // TODO_YASH: Convert Date more readable format. 
+    // TODO_YASH: Make the font-size READABLE for all screen resolutions
     return (
-      <div>
+      <div className = "divMars col-8 container justify-content-center">
         <div className = "mars-mainTitle"> Latest weather at Elysium Plantitia</div>
         <br/>
         <div className = "container">
           
-           <div class="row">          
+           <div className="row">          
             <div className = "col gridItem">
               <h2>
                 Sol
@@ -58,7 +59,7 @@ class MarsInsightDashboard extends Component {
         <hr className = "hr-divider"/>
         
         <div className = "container">
-          <div class="row">
+          <div className="row">
             <div className = "col gridItem">
               <img src={temperature} className = "image"/>
               <br/>

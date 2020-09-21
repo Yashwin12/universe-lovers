@@ -28,7 +28,6 @@ class Mars extends Component {
       this.setState({
         formatedNASAAPIResponse: this.formatData(response.data),
       });
-      console.log(this.state.formatedNASAAPIResponse);
     });
   }
 
@@ -75,13 +74,12 @@ class Mars extends Component {
         date: !!getValuesFromObject(solDay, "First_UTC") ? new Date( getValuesFromObject(solDay, "First_UTC")).toISOString().slice(0,10): null // Date would be in yyyy-mm-dd
       });
     });
-    // console.log(finalArray);
     return finalArray;
   }
 
   render() {
     return (
-      <div className = "divMars col-8 container justify-content-center">                     
+      <div>                     
         <MarsInsightDashboard mostRecentSol = { this.state.formatedNASAAPIResponse[this.state.formatedNASAAPIResponse.length - 1] } />
         
         <MarsDailyWeatherReport sols = {this.state.formatedNASAAPIResponse}/>

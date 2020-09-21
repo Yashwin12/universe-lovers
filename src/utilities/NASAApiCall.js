@@ -22,7 +22,7 @@ function NASAApiCall ( baseURI = null , otherUriParams = [] ) {
     let finalUrl = `${baseURI}${uriParams}`
 
     return new Promise( (resolve, reject) => {
-        axios.get( finalUrl     )
+        axios.get( finalUrl )
         .then( (response) => {         
             resolve(response); 
         })
