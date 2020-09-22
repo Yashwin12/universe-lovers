@@ -6,7 +6,7 @@ import MarsDailyWeatherReport from "./MarsDailyWeatherReport";
 
 import NASAApiCall from "../utilities/NASAApiCall";
 import * as myConstClass from "../utilities/Constants";
-import { getValuesFromObject } from "../utilities/BasicFuncs";
+import { getValuesFromObject, roundInteger, dateFormatter } from "../utilities/CommonUtilities";
 
 class Mars extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class Mars extends Component {
     response.then((response) => {
       // Everything under validity_checks key is for debugging by (NASA's) API providers; these data will not be of interest to typical Mars Weather Data API consumers.
       delete response.data.validity_checks;
+      // console.log(response.data);
       this.setState({
         formatedNASAAPIResponse: this.formatData(response.data),
       });
@@ -38,12 +39,11 @@ class Mars extends Component {
       var solDay = data[element];
 
       let wind = {
-        maxWindSpeed: getValuesFromObject(solDay, "HWS.mx"),
-        minWindSpeed: getValuesFromObject(solDay, "HWS.mn"),
-        avgWindSpeed: getValuesFromObject(solDay, "HWS.av"),
-        windDirectionInDegrees: getValuesFromObject(
-          solDay,
-          "WD.most_common.compass_degrees"
+        maxWindSpeed: roundInteger(getValuesFromObject(solDay, "HWS.mx")),
+        minWindSpeed: roundInteger(getValuesFromObject(solDay, "HWS.mn")),
+        avgWindSpeed: roundInteger(getValuesFromObject(solDay, "HWS.av")),
+        windDirectionInDegrees: roundInteger(
+          getValuesFromObject(solDay, "WD.most_common.compass_degrees")
         ),
         windDirection: getValuesFromObject(
           solDay,
@@ -53,16 +53,16 @@ class Mars extends Component {
       };
 
       let pressure = {
-        maxPressure: getValuesFromObject(solDay, "PRE.mx"),
-        minPressure: getValuesFromObject(solDay, "PRE.mn"),
-        avgPressure: getValuesFromObject(solDay, "PRE.av"),
+        maxPressure: roundInteger(getValuesFromObject(solDay, "PRE.mx")),
+        minPressure: roundInteger(getValuesFromObject(solDay, "PRE.mn")),
+        avgPressure: roundInteger(getValuesFromObject(solDay, "PRE.av")),
         // pressureUnit:"Pa" // Pa is default. Other option is mmHg
       };
 
       let temperature = {
-        highTemp: getValuesFromObject(solDay, "AT.mx"),
-        lowTemp: getValuesFromObject(solDay, "AT.mn"),
-        avgTemp: getValuesFromObject(solDay, "AT.av"),
+        highTemp: roundInteger(getValuesFromObject(solDay, "AT.mx")),
+        lowTemp: roundInteger(getValuesFromObject(solDay, "AT.mn")),
+        avgTemp: roundInteger(getValuesFromObject(solDay, "AT.av")),
         // temperatureUnit = "C" // Default in degree celcius. Other option is Farenheit.
       };
 
@@ -71,9 +71,12 @@ class Mars extends Component {
         pressure,
         temperature,
         solDay: element,
-        date: !!getValuesFromObject(solDay, "First_UTC") ? new Date( getValuesFromObject(solDay, "First_UTC")).toISOString().slice(0,10): null // Date would be in yyyy-mm-dd
+        date: !!getValuesFromObject(solDay, "First_UTC")
+          ? dateFormatter( new Date(getValuesFromObject(solDay, "First_UTC")) )
+          : null,
       });
     });
+    // console.log(finalArray);
     return finalArray;
   }
 

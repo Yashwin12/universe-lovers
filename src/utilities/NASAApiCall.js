@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import {containsKey} from "./BasicFuncs";
+import {containsKey} from "./CommonUtilities";
 
 function NASAApiCall ( baseURI = null , otherUriParams = [] ) {
 
