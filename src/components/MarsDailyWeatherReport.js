@@ -8,33 +8,10 @@ class MarsDailyWeatherReport extends Component {
 
   makeBox( sols ){
 
-    // TODO_YASH: Make it responsive
-    
-    // sols = [ {
-    //     "wind": {
-    //       "maxWindSpeed": 15.915,
-    //       "minWindSpeed": 0.226,
-    //       "avgWindSpeed": 5.037,
-    //       "windDirectionInDegrees": 292.5,
-    //       "windDirection": "WNW"
-    //     },
-    //     "pressure": {
-    //       "maxPressure": 791.2285,
-    //       "minPressure": 741.9242,
-    //       "avgPressure": 773.271
-    //     },
-    //     "temperature": {
-    //       "highTemp": -7.378,
-    //       "lowTemp": -94.833,
-    //       "avgTemp": -68.531
-    //     },
-    //     "solDay": "640",
-    //     "date": "2020-09-13"
-    //   },];
     let returnArray = []
     sols.forEach( ( sol ) => {
         returnArray.push(
-            <div className="col solBox">
+            <div className="col-auto solBox">
                 
                 <span className="label"> Sol <span> {sol.solDay}</span></span>
                 <p className="text-value" >{sol.date}</p>
@@ -50,7 +27,6 @@ class MarsDailyWeatherReport extends Component {
             </div>                               
         );                        
     });
-    console.log(returnArray);
     return returnArray;
   }
 
@@ -60,7 +36,6 @@ class MarsDailyWeatherReport extends Component {
     if ( sols === null || sols === undefined )
         return null;
     
-    // console.log(sols);        
     return (
       <div>
         

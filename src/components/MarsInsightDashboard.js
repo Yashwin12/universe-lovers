@@ -17,10 +17,8 @@ class MarsInsightDashboard extends Component {
     if ( mostRecentSol === null || mostRecentSol === undefined )
         return null;
         
-
     // TODO_YASH: Convery all values to an integer
     // TODO_YASH: Convert Date more readable format. 
-    // TODO_YASH: Make the font-size READABLE for all screen resolutions
     return (
       <div className = "divMars col-8 container justify-content-center">
         <div className = "mars-mainTitle"> Latest weather at Elysium Plantitia</div>
@@ -28,7 +26,7 @@ class MarsInsightDashboard extends Component {
         <div className = "container">
           
            <div className="row">          
-            <div className = "col gridItem">
+            <div className = "col-lg-6 gridItem">
               <h2>
                 Sol
                 <span> {mostRecentSol.solDay}</span>
@@ -36,7 +34,7 @@ class MarsInsightDashboard extends Component {
               <p className="text-value" >{mostRecentSol.date}</p>
             </div>
 
-            <div className = "col gridItem">
+            <div className = "col-lg-6 gridItem">
               <span className="label"> Temperature (avg):</span>
               <span className="text-value"> {mostRecentSol.temperature.avgTemp}°C</span>
                             
@@ -60,7 +58,7 @@ class MarsInsightDashboard extends Component {
         
         <div className = "container">
           <div className="row">
-            <div className = "col gridItem">
+            <div className = "col-lg-4 gridItem">
               <img src={temperature} className = "image"/>
               <br/>
               
@@ -72,7 +70,7 @@ class MarsInsightDashboard extends Component {
               <span className="text-value">{mostRecentSol.temperature.lowTemp}°C</span>
             </div>
 
-            <div className = "col gridItem">
+            <div className = "col-lg-4 gridItem">
               <img src={pressure} className = "image"/>
               <br/>
               
@@ -84,7 +82,7 @@ class MarsInsightDashboard extends Component {
               <span className="text-value">{mostRecentSol.pressure.minPressure} Pa</span> 
             </div>
 
-            <div className = "col gridItem">
+            <div className = "col-lg-4 gridItem">
               <img src={wind} className = "image"/>
               <br/>
               
