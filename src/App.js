@@ -9,7 +9,8 @@ function App() {
   return (
     <div>
       <Router>
-        <Switch> 
+        <Switch>
+          {/* TODO_YASH: Host below server */}
           <Route path = "/night-sky" render = { (routeProps) => ( <NightSky {...routeProps} dataPath= "http://localhost:5000/kmlFile"/> ) } /> 
           <Route path = "/mars" component = {Mars}  />       
         </Switch>        

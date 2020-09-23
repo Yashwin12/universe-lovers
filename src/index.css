@@ -177,16 +177,15 @@ body {
   }
 }
 
- /* Media Query for Laptops and Desktops */
-/* @media (min-width: 1025px) and (max-width: 1280px) {
-  body {
-    background-color: green;
+@media (min-width: 990px){
+  /* HACK: https://stackoverflow.com/questions/21955088/7-equal-columns-in-bootstrap */
+  /* Equal width */
+  .solBoxContainer .col-lg-1 {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 13%;
   }
-} */
-
-/* Media Query for Large screens */
-/* @media (min-width: 1281px) {
-  body {
-    background-color: white;
-  }
-}  */
+}

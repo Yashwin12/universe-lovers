@@ -27,7 +27,7 @@ function NASAApiCall ( baseURI = null , otherUriParams = [] ) {
             resolve(response); 
         })
         .catch( (error) =>  {
-            console.log(error);
+            console.error(error);
             reject(error);         
         }); 
     });     

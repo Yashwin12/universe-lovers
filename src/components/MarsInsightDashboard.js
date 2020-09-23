@@ -17,8 +17,6 @@ class MarsInsightDashboard extends Component {
     if ( mostRecentSol === null || mostRecentSol === undefined )
         return null;
         
-    // TODO_YASH: Convery all values to an integer
-    // TODO_YASH: Convert Date more readable format. 
     return (
       <div className = "divMars col-8 container justify-content-center">
         <div className = "mars-mainTitle"> Latest weather at Elysium Plantitia</div>

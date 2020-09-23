@@ -8,10 +8,33 @@ class MarsDailyWeatherReport extends Component {
 
   makeBox( sols ){
 
-    let returnArray = []
+    // sols = [ {
+    //   "wind": {
+    //     "maxWindSpeed": 15.915,
+    //     "minWindSpeed": 0.226,
+    //     "avgWindSpeed": 5.037,
+    //     "windDirectionInDegrees": 292.5,
+    //     "windDirection": "WNW"
+    //   },
+    //   "pressure": {
+    //     "maxPressure": 791.2285,
+    //     "minPressure": 741.9242,
+    //     "avgPressure": 773.271
+    //   },
+    //   "temperature": {
+    //     "highTemp": -7.378,
+    //     "lowTemp": -94.833,
+    //     "avgTemp": -68.531
+    //   },
+    //   "solDay": "640",
+    //   "date": "2020-09-13"
+    // },];
+    
+    let returnArray = [];
+    let count = 0; 
     sols.forEach( ( sol ) => {
-        returnArray.push(
-            <div className="col-auto solBox">
+        returnArray.push(            
+            <div className="col-lg-1 solBox" key = {count} >
                 
                 <span className="label"> Sol <span> {sol.solDay}</span></span>
                 <p className="text-value" >{sol.date}</p>
@@ -24,8 +47,17 @@ class MarsDailyWeatherReport extends Component {
 
                 <span className="label"> Low: </span>
                 <span className="text-value">{sol.temperature.lowTemp}°C</span>
+
+                <hr className = "hr-divider"/>
+                <button type="button" onClick={ this.props.onClick } 
+                  className="btn btn-primary btn-block"
+                  style = {{ background: 'rgb(69, 69, 135)' }}
+                  id={`box-${count}`} >
+                    More Info
+                </button>
             </div>                               
-        );                        
+        );
+        count++;                        
     });
     return returnArray;
   }
@@ -52,7 +84,7 @@ class MarsDailyWeatherReport extends Component {
         }
 
         <div className="row solBoxContainer">
-            {this.makeBox(sols)}       
+          {this.makeBox(sols)}
         </div>            
         
       </div>

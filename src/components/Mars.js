@@ -13,7 +13,9 @@ class Mars extends Component {
     super(props);
     this.state = {
       formatedNASAAPIResponse: [],
+      currentSolIndexNumber: null
     };
+    this.moreInfoButtonClick  = this.moreInfoButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,9 +27,11 @@ class Mars extends Component {
     response.then((response) => {
       // Everything under validity_checks key is for debugging by (NASA's) API providers; these data will not be of interest to typical Mars Weather Data API consumers.
       delete response.data.validity_checks;
-      // console.log(response.data);
+      let formattedData = this.formatData(response.data);
+      // console.log(formattedData);
       this.setState({
-        formatedNASAAPIResponse: this.formatData(response.data),
+        formatedNASAAPIResponse: formattedData,
+        currentSolIndexNumber: formattedData.length - 1
       });
     });
   }
@@ -80,13 +84,19 @@ class Mars extends Component {
     return finalArray;
   }
 
+
+  moreInfoButtonClick(event) {
+    const buttonClickedId = event.target.id;
+    let currentSolIndexNumber = buttonClickedId.split('-');
+    this.setState( { currentSolIndexNumber: currentSolIndexNumber[1] } );
+  }
+
   render() {
     return (
       <div>                     
-        <MarsInsightDashboard mostRecentSol = { this.state.formatedNASAAPIResponse[this.state.formatedNASAAPIResponse.length - 1] } />
+        <MarsInsightDashboard mostRecentSol = { this.state.formatedNASAAPIResponse[this.state.currentSolIndexNumber] } />
         
-        <MarsDailyWeatherReport sols = {this.state.formatedNASAAPIResponse}/>
-        {/* <MarsWeatherReportGraph /> */}
+        <MarsDailyWeatherReport sols = {this.state.formatedNASAAPIResponse} onClick={ this.moreInfoButtonClick}/>        
       </div>
     );
   }
