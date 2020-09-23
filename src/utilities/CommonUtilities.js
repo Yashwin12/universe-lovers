@@ -28,3 +28,26 @@ export function dateFormatter(date) {
     date = new Intl.DateTimeFormat("en-AU", options).format(date).replace(/\s/g, '-');    
     return date;
 }
+
+export function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+export function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var cookieArray = decodedCookie.split(';');
+  for(var i = 0; i <cookieArray.length; i++) {
+    var currentCookie = cookieArray[i];
+    while (currentCookie.charAt(0) == ' ') {
+      currentCookie = currentCookie.substring(1);
+    }
+    if (currentCookie.indexOf(name) == 0) {
+      return currentCookie.substring(name.length, currentCookie.length);
+    }
+  }
+  return "";
+}

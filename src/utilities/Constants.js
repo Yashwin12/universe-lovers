@@ -15,4 +15,6 @@ export const MARS_INSIGHT_URI_PARAMS = [
     },
 ];
 
+export const MARS_DATA_COOKIE_NAME = "mars_data";
+
 

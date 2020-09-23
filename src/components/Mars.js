@@ -6,7 +6,7 @@ import MarsDailyWeatherReport from "./MarsDailyWeatherReport";
 
 import NASAApiCall from "../utilities/NASAApiCall";
 import * as myConstClass from "../utilities/Constants";
-import { getValuesFromObject, roundInteger, dateFormatter } from "../utilities/CommonUtilities";
+import { getValuesFromObject, roundInteger, dateFormatter, getCookie, setCookie } from "../utilities/CommonUtilities";
 
 class Mars extends Component {
   constructor(props) {
@@ -20,20 +20,35 @@ class Mars extends Component {
 
   componentDidMount() {
     // TODO_YASH: Check if data is present in the session_cookie or not.
-    var response = NASAApiCall(
-      myConstClass.MARS_INSIGHT_BASE_URI,
-      myConstClass.MARS_INSIGHT_URI_PARAMS
-    );
-    response.then((response) => {
-      // Everything under validity_checks key is for debugging by (NASA's) API providers; these data will not be of interest to typical Mars Weather Data API consumers.
-      delete response.data.validity_checks;
-      let formattedData = this.formatData(response.data);
-      // console.log(formattedData);
+    if( getCookie(myConstClass.MARS_DATA_COOKIE_NAME) === "" ){
+      // User's first time on the site.
+
+      var response = NASAApiCall(
+        myConstClass.MARS_INSIGHT_BASE_URI,
+        myConstClass.MARS_INSIGHT_URI_PARAMS
+      );
+      response.then((response) => {
+        // Everything under validity_checks key is for debugging by (NASA's) API providers; these data will not be of interest to typical Mars Weather Data API consumers.
+        delete response.data.validity_checks;
+        let formattedData = this.formatData(response.data);
+
+        this.setState({
+          formatedNASAAPIResponse: formattedData,
+          currentSolIndexNumber: formattedData.length - 1
+        });
+        
+        setCookie( myConstClass.MARS_DATA_COOKIE_NAME, JSON.stringify(formattedData), 0.04); // Stores it for 1 hour. 1/24 ~ 0.04
+      });      
+    }
+    else {
+      // Data is already present in a cookie.
+      let valuesFromCookie = JSON.parse( getCookie(myConstClass.MARS_DATA_COOKIE_NAME) );
+
       this.setState({
-        formatedNASAAPIResponse: formattedData,
-        currentSolIndexNumber: formattedData.length - 1
+        formatedNASAAPIResponse: valuesFromCookie,
+        currentSolIndexNumber: valuesFromCookie.length - 1
       });
-    });
+    }   
   }
 
   formatData(data) {
