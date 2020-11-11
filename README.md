@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Universe-Lovers <img src ="https://media.giphy.com/media/Z9WQLSrsQKH3uBbiXq/giphy-downsized.gif" width = "30" height = "25">
 
-## Available Scripts
+Universe-Lovers is a self-motivated project between two software engineers and lovers of a universe. This project consists of several responsive projects encircling astronomy. 
 
-In the project directory, you can run:
 
-### `npm start`
+### `Core functionality` <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> 
+This project consists of below three major functionalities.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### `1. Weather at Mars' equator: Elysium Planitia` <img src = "https://media.giphy.com/media/Wkcw6SzOtaSxG/giphy.gif" width = "25">
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[NASA's InSight Mars Lander](https://www.nasa.gov/mission_pages/insight/main/index.html) is taking daily weather measurements (temperature, wind, pressure) on the surface of Mars at Elysium Planitia, a flat, smooth plain near Mars’ equator.
 
-### `npm test`
+**Features:** 
+-  Dashboard for Mars' weather
+-  Switch between different available sol days
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Data:** Mars weather data is fetched from [NASA-APIs](https://api.nasa.gov/).
 
-### `npm run build`
+![](./gifs/mars.gif)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `2. International Space Station(ISS) Tracker` <img src = "https://media.giphy.com/media/8TtxfNs3GrZbWtbojP/giphy-downsized.gif" width = "30" height = "25">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The real-time International Space Station (ISS) tracker helps to identify the current location 
+of ISS and its orbit trajectory across the globe in both 2D and 3D interactive representations.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Features:** 
+-  Real-time ISS tracking 
+-  ISS orbit trajectory
 
-### `npm run eject`
+**Data:** Location of ISS is brought using [Open-Notify-API](http://open-notify.org/Open-Notify-API/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![](./gifs/iss.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `3. Light Pollution Map ` <img src = "https://media.giphy.com/media/wa8uMtV7bmdGTGGmD7/giphy-downsized.gif" width = "30" height = "25"> <img src = "https://media.giphy.com/media/l2JebisijdzVL2Cqs/giphy.gif" width = "30" height = "25">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Light pollution limits the visibility of milky way to the unaided eye, the visiblity of nebulae and galaxies seen in telescopes, and raises the noise on astrophotographs. Light Pollution Map allows you to easily locate dark sites where the sky will not be affected by light pollution, allowing the best observance, star gazing, and photography of the night sky!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Features:** 
+-  Visualization of Light Pollution Map in various 2D and 3D form
+-  Search dark sites at particular location
 
-## Learn More
+**Data:** Light pollution map is built with the
+[World Atlas of Artificial Night Sky Brightness dataset](https://dataservices.gfz-potsdam.de/contact/showshort.php?id=escidoc:1541893&contactform).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![](./gifs/lightPollutionMap.gif)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### `Known limitations` <img src = "https://media.giphy.com/media/TydZAW0DVCbGE/giphy.gif" height = "25" width = "25">
+As Universe-Lovers is using `free` version of the APIs, one might run into few issues but not limited to HTTP 429 - too many requests.
