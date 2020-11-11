@@ -1,6 +1,6 @@
 ## Universe-Lovers <img src ="https://media.giphy.com/media/Z9WQLSrsQKH3uBbiXq/giphy-downsized.gif" width = "30" height = "25">
 
-Universe-Lovers is a self-motivated project between two software engineers and lovers of a universe. This project consists of several responsive projects encircling astronomy. 
+Universe-Lovers is a self-motivated project between two software engineers and lovers of the universe. This project consists of several responsive sub-projects focused on astronomy. 
 
 
 ### `Core functionality` <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> 
