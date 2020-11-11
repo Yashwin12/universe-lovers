@@ -14,7 +14,7 @@ This project consists of below three major functionalities.
 -  Dashboard for Mars' weather
 -  Switch between different available sol days
 
-***Data:** Mars weather data is fetched from [NASA-APIs](https://api.nasa.gov/).*
+**Data:** Mars weather data is fetched from [NASA-APIs](https://api.nasa.gov/).
 
 ![](./gifs/mars.gif)
 
@@ -27,7 +27,7 @@ of ISS and its orbit trajectory across the globe in both 2D and 3D interactive r
 -  Real-time ISS tracking 
 -  ISS orbit trajectory
 
-***Data:** Location of ISS is brought using [Open-Notify-API](http://open-notify.org/Open-Notify-API/).*
+**Data:** Location of ISS is brought using [Open-Notify-API](http://open-notify.org/Open-Notify-API/).
 
 ![](./gifs/iss.gif)
 
@@ -39,8 +39,8 @@ Light pollution limits the visibility of milky way to the unaided eye, the visib
 -  Visualization of Light Pollution Map in various 2D and 3D form
 -  Search dark sites at particular location
 
-***Data:** Light pollution map is built with the
-[World Atlas of Artificial Night Sky Brightness dataset](https://dataservices.gfz-potsdam.de/contact/showshort.php?id=escidoc:1541893&contactform).*
+**Data:** Light pollution map is built with the
+[World Atlas of Artificial Night Sky Brightness dataset](https://dataservices.gfz-potsdam.de/contact/showshort.php?id=escidoc:1541893&contactform).
 
 ![](./gifs/lightPollutionMap.gif)
 
