@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import MarsWeatherReportGraph from "./MarsWeatherReportGraph";
 import MarsInsightDashboard from "./MarsInsightDashboard";
 import MarsDailyWeatherReport from "./MarsDailyWeatherReport";
 
@@ -19,7 +18,6 @@ class Mars extends Component {
   }
 
   componentDidMount() {
-    // TODO_YASH: Check if data is present in the session_cookie or not.
     if( getCookie(myConstClass.MARS_DATA_COOKIE_NAME) === "" ){
       // User's first time on the site.
 
